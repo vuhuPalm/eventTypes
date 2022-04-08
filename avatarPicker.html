@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Avatar Selector</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+    <div class="content">
+        <div class="picture">
+            <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png">
+        </div>
+        <button id="ava1">Avatar 1</button>
+        <button id="ava2">Avatar 2</button>
+    </div>
+</div>
+<script>
+    const picture = document.querySelector('img');
+    const ava1 = document.getElementById('ava1');
+    const av1 = document.getElementById('av1');
+
+    av1.addEventListener('click', function(e) {
+        content.image.src=e.target.value;
+    });
+    ava1.addEventListener('click', function(e) {
+        picture.src='av1';
+    });
+</script>
+</body>
+</html>
