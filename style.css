@@ -75,3 +75,7 @@ section header{
     justify-content: center;
     align-items: center;
 }
+.picture {
+    width:100px;
+    height:100px;
+}
