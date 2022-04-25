@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="content">
+        <h1>Calculator</h1>
+        <div class="row">
+            <div>
+                <label for="a">First Number</label>
+                <input type="text" id="a" name="a" style="width: 100px;">
+            </div>
+            <div>
+                <label for="b">Second Number</label>
+                <input type="text" id="b" name="b" style="width: 100px;">
+            </div>
+        </div>
+        <button id="mult">*</button>
+        <button id="divi">/</button>
+        <button id="add">+</button>
+        <button id="sub">-</button>
+        <button id="perc">%</button>
+        <button id="clear">Clear</button>
+        <p class="hidden"></p>
+    </div>
+</div>
+<script>
+    const a = document.getElementById('a');
+    const b = document.getElementById('b');
+    const multiply = document.getElementById('mult');
+    const divi = document.getElementById('divi');
+    const add = document.getElementById('add');
+    const sub = document.getElementById('sub');
+    const perc = document.getElementById('perc');
+    const clear = document.getElementById('clear');
+    const fin = document.querySelector('p');
+
+    multiply.addEventListener('click', function(e) {
+        let eleA = +a.value;
+        let eleB = +b.value;
+        let final = (eleA * eleB);
+
+        fin.classList.remove("hidden");
+        const child = document.createElement('p');
+        child.innerHTML = `${eleA} * ${eleB} = ${final}`;
+        fin.insertAdjacentElement('beforeend', child);
+
+       //fin.textContent = `${eleA} * ${eleB} = ${final}`;
+
+        a.value="";
+        b.value="";
+    })
+
+    divi.addEventListener('click', function(e) {
+        let eleA = +a.value;
+        let eleB = +b.value;
+        fin.classList.remove("hidden");
+        let final = (eleA / eleB);
+
+        const child = document.createElement('p');
+        child.innerHTML = `${eleA} / ${eleB} = ${final}`;
+        fin.insertAdjacentElement('beforeend', child);
+
+        a.value="";
+        b.value="";
+    })
+
+    add.addEventListener('click', function(e) {
+        let eleA = +a.value;
+        let eleB = +b.value;
+        fin.classList.remove("hidden");
+        let final = (eleA + eleB);
+
+        const child = document.createElement('p');
+        child.innerHTML = `${eleA} + ${eleB} = ${final}`;
+        fin.insertAdjacentElement('beforeend', child);
+
+        a.value="";
+        b.value="";
+    })
+
+    sub.addEventListener('click', function(e) {
+        let eleA = +a.value;
+        let eleB = +b.value;
+        fin.classList.remove("hidden");
+        let final = (eleA - eleB);
+
+        const child = document.createElement('p');
+        child.innerHTML = `${eleA} - ${eleB} = ${final}`;
+        fin.insertAdjacentElement('beforeend', child);
+
+        a.value="";
+        b.value="";
+    })
+
+    perc.addEventListener('click', function(e) {
+        let eleA = +a.value;
+        let eleB = +b.value;
+        fin.classList.remove("hidden");
+        let final = (eleA % eleB);
+
+        const child = document.createElement('p');
+        child.innerHTML = `${eleA} * ${eleB} = ${final}`;
+        fin.insertAdjacentElement('beforeend', child);
+
+        a.value="";
+        b.value="";
+    })
+
+    clear.addEventListener('click', function(e) {
+        a.value = "";
+        b.value = "";
+        fin.textContent = "";
+    })
+</script>
+</body>
+</html>
